@@ -4,7 +4,6 @@ pub struct Graph {
     pub edge: Vec<(String, String)>,
 }
 
-// TODO: Validate all edge endpoint
 impl Graph {
     pub fn from_file(node_path: &str, edge_path: &str) -> Graph {
         use std::fs;
