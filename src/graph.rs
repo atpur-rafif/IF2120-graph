@@ -11,7 +11,7 @@ impl Graph {
 
         let node: Vec<String> = match fs::read_to_string(node_path) {
             Ok(str) => {
-                let node: Vec<String> = str.split('\n').map(|s| s.to_string()).collect();
+                let node: Vec<String> = str.split('\n').map(|s| s.trim().to_string()).collect();
                 if !node.iter().all(|s| !s.contains(' ')) {
                     panic!("Node can't include space");
                 }
@@ -24,7 +24,7 @@ impl Graph {
             Ok(str) => str
                 .split('\n')
                 .map(|pair| {
-                    let edge: Vec<&str> = pair.split(' ').collect();
+                    let edge: Vec<&str> = pair.trim().split(' ').collect();
                     if edge.len() != 2 {
                         panic!("Invalid edge format at \"{pair}\"");
                     }

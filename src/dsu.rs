@@ -10,7 +10,11 @@ pub struct DSU {
 
 impl DSU {
     pub fn find(&mut self, key: &String) -> String {
-        let value = self.data.get(key).expect("Invalid node for DSU").clone();
+        let value = self
+            .data
+            .get(key)
+            .expect(format!("Invalid node for DSU {key}").as_str())
+            .clone();
 
         if value == *key {
             value
