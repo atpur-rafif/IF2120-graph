@@ -1,3 +1,9 @@
+mod graph;
+
+use crate::graph::Graph;
+
 fn main() {
-    println!("Hello, world!");
+    let graph = Graph::from_file("./src/graph/node.txt", "./src/graph/edge.txt");
+
+    println!("{:?}", graph);
 }
