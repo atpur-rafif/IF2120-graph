@@ -1,4 +1,3 @@
-#[derive(Debug)]
 pub struct Graph {
     pub node: Vec<String>,
     pub edge: Vec<(String, String)>,

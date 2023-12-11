@@ -48,7 +48,7 @@ impl DSU {
         };
 
         for node in &graph.node {
-            dsu.data.insert(node.clone(), node.clone());
+            dsu.insert(node);
         }
 
         for (a, b) in &graph.edge {
